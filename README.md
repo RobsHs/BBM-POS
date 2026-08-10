@@ -157,7 +157,7 @@ Project ini dibuat untuk mempelajari dan menerapkan:
 - [ ] Manajemen stok
 - [ ] Dark mode
 - [ ] Backup & restore data
-- [ ] Firebase / Supabase
+- [ ] Firebase
 - [ ] Multi-user system
 
 ---
