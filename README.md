@@ -162,16 +162,6 @@ Project ini dibuat untuk mempelajari dan menerapkan:
 
 ---
 
-## 👨‍💻 Author
-
-**RobsHs**
-
-GitHub: [@RobsHs](https://github.com/RobsHs)
-
-Repository: [BBM-POS](https://github.com/RobsHs/BBM-POS)
-
----
-
 ## 📄 License
 
 Project ini dibuat untuk tujuan **pembelajaran dan pengembangan**.
