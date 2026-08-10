@@ -35,16 +35,6 @@ Dibangun menggunakan **HTML, CSS, dan JavaScript** dengan tampilan sederhana, mo
 
 ---
 
-## 🖥️ Preview
-
-Tambahkan screenshot aplikasi pada folder `assets`.
-
-```markdown
-![BBM-POS Preview](assets/preview.png)
-```
-
----
-
 ## 🛠️ Technologies
 
 Project ini dibuat menggunakan:
@@ -169,22 +159,6 @@ Project ini dibuat untuk mempelajari dan menerapkan:
 - [ ] Backup & restore data
 - [ ] Firebase / Supabase
 - [ ] Multi-user system
-
----
-
-## 📸 Screenshots
-
-### Dashboard
-
-![Dashboard](assets/dashboard.png)
-
-### Transaction
-
-![Transaction](assets/transaction.png)
-
-### Transaction History
-
-![History](assets/history.png)
 
 ---
 
