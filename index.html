@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir BBM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">⛽</div>
+            <div>
+                <strong>BBM POS</strong>
+                <span>Point of Sale</span>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-item active" data-page="kasir">
+                <span>▣</span>
+                Kasir
+            </button>
+
+            <button class="nav-item" data-page="transaksi">
+                <span>▤</span>
+                Transaksi
+            </button>
+
+            <button class="nav-item" data-page="produk">
+                <span>▦</span>
+                Harga BBM
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="operator">
+                <div class="avatar">OP</div>
+                <div>
+                    <strong>Operator</strong>
+                    <small>Kasir SPBU</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <h1 id="pageTitle">Kasir</h1>
+                <p id="currentDate"></p>
+            </div>
+
+            <div class="station-status">
+                <span></span>
+                SPBU ONLINE
+            </div>
+        </header>
+
+        <section class="page active" id="kasir">
+
+            <div class="cashier-grid">
+
+                <div class="panel products-panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Pilih BBM</h2>
+                            <p>Pilih jenis bahan bakar</p>
+                        </div>
+                    </div>
+
+                    <div class="product-grid" id="productGrid"></div>
+
+                    <div class="input-section">
+
+                        <label>Jumlah Liter</label>
+
+                        <div class="liter-input">
+                            <input
+                                type="number"
+                                id="literInput"
+                                min="0.01"
+                                step="0.01"
+                                value="1"
+                            >
+                            <span>Liter</span>
+                        </div>
+
+                        <div class="quick-liter">
+                            <button data-liter="5">5 L</button>
+                            <button data-liter="10">10 L</button>
+                            <button data-liter="20">20 L</button>
+                            <button data-liter="30">30 L</button>
+                            <button data-liter="50">50 L</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="panel order-panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Transaksi</h2>
+                            <p id="transactionNumber"></p>
+                        </div>
+
+                        <button class="clear-btn" id="clearCart">
+                            Bersihkan
+                        </button>
+                    </div>
+
+                    <div class="order-list" id="orderList">
+                        <div class="empty">
+                            <div>⛽</div>
+                            <p>Belum ada BBM</p>
+                            <small>Pilih produk untuk memulai transaksi</small>
+                        </div>
+                    </div>
+
+                    <div class="summary">
+
+                        <div>
+                            <span>Harga / Liter</span>
+                            <strong id="pricePerLiter">Rp 0</strong>
+                        </div>
+
+                        <div>
+                            <span>Volume</span>
+                            <strong id="totalLiter">0 L</strong>
+                        </div>
+
+                        <div class="total">
+                            <span>Total</span>
+                            <strong id="grandTotal">Rp 0</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="payment">
+
+                        <label>Metode Pembayaran</label>
+
+                        <div class="payment-methods">
+                            <button class="payment-btn active" data-method="Tunai">
+                                Tunai
+                            </button>
+
+                            <button class="payment-btn" data-method="QRIS">
+                                QRIS
+                            </button>
+
+                            <button class="payment-btn" data-method="Debit">
+                                Debit
+                            </button>
+                        </div>
+
+                        <div class="cash-field" id="cashField">
+
+                            <label>Uang Dibayar</label>
+
+                            <input
+                                type="number"
+                                id="cashInput"
+                                placeholder="Masukkan nominal"
+                            >
+
+                            <div class="change">
+                                <span>Kembalian</span>
+                                <strong id="changeAmount">Rp 0</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="pay-btn" id="payButton">
+                            Bayar Sekarang
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="page" id="transaksi">
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Riwayat Transaksi</h2>
+                        <p>Daftar transaksi hari ini</p>
+                    </div>
+
+<div style="display:flex;gap:8px;">
+    <button class="clear-btn" id="clearHistory">
+        Hapus Riwayat
+    </button>
+
+    <button class="export-btn" id="exportBtn">
+        Export CSV
+    </button>
+</div>
+
+                <div class="table-wrapper">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No. Transaksi</th>
+                                <th>BBM</th>
+                                <th>Volume</th>
+                                <th>Total</th>
+                                <th>Pembayaran</th>
+                                <th>Waktu</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="transactionTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="page" id="produk">
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Harga BBM</h2>
+                        <p>Daftar harga bahan bakar</p>
+                    </div>
+                </div>
+
+                <div class="price-list" id="priceList"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="modal" id="receiptModal">
+
+    <div class="receipt">
+
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div class="receipt-header">
+            <div class="receipt-logo">⛽</div>
+            <h2>BBM POS</h2>
+            <p>Struk Pembelian BBM</p>
+        </div>
+
+        <div id="receiptContent"></div>
+
+        <div class="receipt-footer">
+            <p>Terima kasih</p>
+            <small>Simpan struk ini sebagai bukti transaksi</small>
+        </div>
+
+        <button class="print-btn" onclick="window.print()">
+            Cetak Struk
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
