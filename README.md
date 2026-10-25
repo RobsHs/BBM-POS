@@ -161,9 +161,17 @@ Project ini dibuat untuk mempelajari dan menerapkan:
 - [ ] Multi-user system
 
 ---
+
+## 👥 Contributors
+
+- [RobsHs](https://github.com/RobsHs) - Lead Developer
+- [BenSnn](https://github.com/BenSnn) - Contributor
+
+---
   
 ## 📄 License
 
 Project ini dibuat untuk tujuan **pembelajaran dan pengembangan**.
 
 Bebas digunakan sebagai referensi untuk mempelajari pembuatan aplikasi Point of Sale menggunakan HTML, CSS, dan JavaScript.
+
